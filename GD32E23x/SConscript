@@ -9,6 +9,7 @@ cwd = GetCurrentDir()
 src = Split('''
 GD32E23x_standard_peripheral/Source/gd32e23x_gpio.c
 GD32E23x_standard_peripheral/Source/gd32e23x_rcu.c
+GD32E23x_standard_peripheral/Source/gd32e23x_dma.c
 GD32E23x_standard_peripheral/Source/gd32e23x_exti.c
 GD32E23x_standard_peripheral/Source/gd32e23x_misc.c
 GD32E23x_standard_peripheral/Source/gd32e23x_syscfg.c
@@ -23,17 +24,8 @@ if GetDepend(['RT_USING_I2C']):
 if GetDepend(['RT_USING_SPI']):
     src += ['GD32E23x_standard_peripheral/Source/gd32e23x_spi.c']
 
-if GetDepend(['RT_USING_CAN']):
-    src += ['GD32E23x_standard_peripheral/Source/gd32e23x_can.c']
-
-if GetDepend(['BSP_USING_ETH']):
-    src += ['GD32E23x_standard_peripheral/Source/gd32e23x_enet.c']
-
 if GetDepend(['RT_USING_ADC']):
     src += ['GD32E23x_standard_peripheral/Source/gd32e23x_adc.c']
-
-if GetDepend(['RT_USING_DAC']):
-    src += ['GD32E23x_standard_peripheral/Source/gd32e23x_dac.c']
 
 if GetDepend(['RT_USING_RTC']):
     src += ['GD32E23x_standard_peripheral/Source/gd32e23x_rtc.c']
@@ -42,10 +34,6 @@ if GetDepend(['RT_USING_RTC']):
 if GetDepend(['RT_USING_WDT']):
     src += ['GD32E23x_standard_peripheral/Source/gd32e23x_wwdgt.c']
     src += ['GD32E23x_standard_peripheral/Source/gd32e23x_fwdgt.c']
-
-if GetDepend(['RT_USING_SDIO']):
-    src += ['GD32E23x_standard_peripheral/Source/gd32e23x_sdio.c']
-    src += ['GD32E23x_standard_peripheral/Source/gd32e23x_dma.c']
 
 path = [cwd + '/GD32E23x_standard_peripheral/Include']
 
