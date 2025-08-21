@@ -35,8 +35,7 @@ OF SUCH DAMAGE.
 #include "gd32h7xx_dma.h"
 #include <stdlib.h>
 
-#define DMA_WRONG_HANDLE        while(1)
-{}
+#define DMA_WRONG_HANDLE        while(1){}
 
 /* DMA register bit offset */
 #define CHXFCTL_FCNT_OFFSET        ((uint32_t)0x00000003U)               /*!< bit offset of FCNT in DMA_CHxFCTL */
