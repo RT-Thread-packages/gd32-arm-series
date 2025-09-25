@@ -30,6 +30,9 @@ if GetDepend(['RT_USING_PWM']):
 if GetDepend(['RT_USING_CAN']):
     src += ['GD32F5xx_standard_peripheral/Source/gd32f5xx_can.c']
 
+if GetDepend(['BSP_USING_GD_DBG']):
+    src += ['GD32F5xx_standard_peripheral/Source/gd32f5xx_dbg.c']
+
 if GetDepend(['BSP_USING_ETH']):
     src += ['GD32F5xx_standard_peripheral/Source/gd32f5xx_enet.c']
 
