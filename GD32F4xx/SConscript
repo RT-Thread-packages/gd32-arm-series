@@ -36,6 +36,9 @@ if GetDepend(['RT_USING_ADC']):
 if GetDepend(['RT_USING_DAC']):
     src += ['GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c']
 
+if GetDepend(['RT_USING_PWM']) or GetDepend(['RT_USING_HWTIMER']):
+    src += ['GD32F4xx_standard_peripheral/Source/gd32f4xx_timer.c']
+
 if GetDepend(['RT_USING_RTC']):
     src += ['GD32F4xx_standard_peripheral/Source/gd32f4xx_rtc.c']
     src += ['GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c']
